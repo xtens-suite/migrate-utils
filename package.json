@@ -4,7 +4,7 @@
   "description": "Tools to migrate from \"old\" Java/MySQL-based XTENS to the current version (nodeJS/PostgreSQL)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "PORT=9999 NODE_ENV=test mocha -R spec --recursive --debug-brk"
   },
   "repository": {
     "type": "git",
@@ -24,14 +24,17 @@
   "homepage": "https://github.com/biolab-unige/migrate-utils",
   "dependencies": {
     "bluebird": "^2.9.30",
+    "excel": "^0.1.4",
     "knex": "^0.8.6",
     "lodash": "^3.9.3",
     "mysql": "^2.7.0",
-    "pg": "^4.4.0"
+    "node-xlsx": "^0.6.0",
+    "pg": "^4.4.0",
+    "xlsx": "^0.8.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "mocha": "^2.2.5",
+    "mocha": "^2.3.0",
     "sinon": "^1.15.3"
   }
 }

@@ -11,4 +11,11 @@ describe('Migrator', function() {
 
     });
 
+    describe("#migrateCGHRecord", function() {
+        
+        var migrator = new Migrator();
+        migrator.migrateCGHRecord('/home/massi/Projects/aCGH/FileBIT/15-H-00455.xlsx');
+
+    });
+
 });
