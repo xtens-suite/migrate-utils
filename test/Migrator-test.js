@@ -10,12 +10,20 @@ describe('Migrator', function() {
         var migrator = new Migrator();
 
     });
-
-    describe("#migrateCGHRecord", function() {
+    
+    /*
+    describe("#composeCGHMetadata", function() {
         
         var migrator = new Migrator();
-        migrator.migrateCGHRecord('/home/massi/Projects/aCGH/FileBIT/15-H-00455.xlsx');
+        migrator.composeCGHMetadata('/home/massi/Projects/aCGH/FileBIT/15-H-00455.xlsx');
 
+    }); */
+
+    describe("#migrateCGH", function() {
+        var migrator = new Migrator();
+        migrator.migrateCGH('/home/massi/Projects/aCGH/FileBIT', '.xlsx').then(function() {
+            console.log("done");
+        });
     });
 
 });
