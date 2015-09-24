@@ -21,8 +21,12 @@ describe('Migrator', function() {
 
     describe("#migrateCGH", function() {
         var migrator = new Migrator();
-        migrator.migrateCGH('/home/massi/Projects/aCGH/FileBIT', '.xlsx').then(function() {
+        migrator.migrateCGH('/home/massi/Projects/aCGH/FileBIT', '.xlsx')
+        .then(function() {
             console.log("done");
+        })
+        .catch(function(err) {
+            console.log(err);
         });
     });
 
