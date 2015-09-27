@@ -6,6 +6,12 @@ var path = require('path');
 var fileList = ['fileA.txt', 'fileB.xlsx', 'fileC.xlsx', 'fileD.xls', 'fileE.csv', 'fileF.xlsx'];
 
 describe("utils", function() {
+
+    describe("#testMigrate", function() {
+        it("should migrate a subject", function() {
+        
+        });
+    });
     
     describe("#getFilesInFolder", function() {
         

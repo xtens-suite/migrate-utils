@@ -30,4 +30,15 @@ describe('Migrator', function() {
         });
     });
 
+    describe("#testMigrate", function() {
+        it("should migrate a subject", function() {
+            console.log("Migrator-test.testMigrate - here we are");
+            var migrator = new Migrator();
+            return migrator.migrateCompleteSubject(1).then(function() {
+                console.log("Migrator-test.testMigrate - done");
+            })
+            .catch(console.log);
+        });
+    });
+
 });

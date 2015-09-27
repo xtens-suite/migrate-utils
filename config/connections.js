@@ -1,5 +1,7 @@
 module.exports = {
 
+    bearerToken: 'eyJhbGciOiJIUzI1NiJ9.MQ.Lu-KcR4aCeuT9hi1K474zV3s4VaopLDCcf4nZvH6DQo',
+
     mysqlLocal: {
         client: 'mysql',
         connection: {
