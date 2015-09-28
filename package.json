@@ -2,7 +2,9 @@
   "name": "migrate-utils",
   "version": "1.0.0",
   "description": "Tools to migrate from \"old\" Java/MySQL-based XTENS to the current version (nodeJS/PostgreSQL)",
-  "main": "index.js",
+  "bin": {
+    "migrate": "migrate.js"
+  },
   "scripts": {
     "test": "PORT=9999 NODE_ENV=test mocha -R spec --recursive --debug-brk"
   },
