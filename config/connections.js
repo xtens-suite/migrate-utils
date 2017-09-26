@@ -1,6 +1,6 @@
 module.exports = {
 
-    bearerToken: 'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NywiaXNXaGVlbCI6dHJ1ZSwiaXNBZG1pbiI6dHJ1ZSwiY2FuQWNjZXNzUGVyc29uYWxEYXRhIjp0cnVlLCJjYW5BY2Nlc3NTZW5zaXRpdmVEYXRhIjp0cnVlfQ.Tf57NjL4LJ1iHqrYfO9KzBYlNbjUBDEK00uR2YlazQg',
+    bearerToken: '',
 
     mysqlLocal: {
         client: 'mysql',
