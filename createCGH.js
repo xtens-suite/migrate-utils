@@ -8,9 +8,12 @@ var DEFAULT_LOCATION = '../xtens-app/assets/dataFiles/tmp';
 
 return migrator.migrateCGH(DEFAULT_LOCATION,'.xlsx')
 //migrator.migrateCompleteSubject(5)
-.then(function() {
+.then(function(summary) {
     logger.log('info', 'migrate: done!');
-    process.exit(0);
+    process.send(summary, function () {
+        process.exit(0);
+    });
+
 })
 .catch(function(err) {
     logger.log('error', err);
