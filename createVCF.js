@@ -5,9 +5,8 @@ var Migrator = require("./lib/Migrator.js");
 logger.log('info', "Creating new migrator");
 var migrator = new Migrator();
 var DEFAULT_LOCATION = '../xtens-app/assets/dataFiles/tmp';
-logger.log('info', process.argv[2]);
 
-migrator.migrateVCF(DEFAULT_LOCATION,'.vcf', process.argv[2])
+migrator.migrateVCF(DEFAULT_LOCATION,'.vcf', process)
 .then(function(summary) {
     logger.log('info', 'migrate: done!');
     process.send(summary, function () {

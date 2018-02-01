@@ -6,7 +6,7 @@ logger.log('info', "Creating new migrator");
 var migrator = new Migrator();
 var DEFAULT_LOCATION = '../xtens-app/assets/dataFiles/tmp';
 
-migrator.migrateCGH(DEFAULT_LOCATION,'.xlsx', process.argv[2])
+migrator.migrateCGH(DEFAULT_LOCATION,'.xlsx', process)
 .then(function(summary) {
     logger.log('info', 'migrate: done!');
     process.send(summary, function () {
