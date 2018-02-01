@@ -1,7 +1,7 @@
 {
   "name": "migrate-utils",
   "version": "1.0.0",
-  "description": "Tools to migrate from \"old\" Java/MySQL-based XTENS to the current version (nodeJS/PostgreSQL)",
+  "description": "Tools to migrate from \"old\" Java/MySQL-based XTENS and Excel files to the current version (nodeJS/PostgreSQL)",
   "bin": {
     "migrate": "migrate.js"
   },
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/biolab-unige/migrate-utils.git"
+    "url": "https://github.com/xtens-suite/migrate-utils.git"
   },
   "keywords": [
     "migration",
@@ -21,9 +21,9 @@
   "author": "Massimiliano Izzo",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/biolab-unige/migrate-utils/issues"
+    "url": "https://github.com/xtens-suite/migrate-utils/issues"
   },
-  "homepage": "https://github.com/biolab-unige/migrate-utils",
+  "homepage": "https://github.com/xtens-suite/migrate-utils",
   "dependencies": {
     "bionode-vcf": "^1.1.5",
     "bluebird": "^2.9.30",
