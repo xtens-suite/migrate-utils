@@ -7,7 +7,7 @@ var migrator = new Migrator();
 var DEFAULT_LOCATION = '../xtens-app/assets/dataFiles/tmp';
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-migrator.migrateCGH(DEFAULT_LOCATION, '.xlsx', process)
+migrator.migrateCGH(DEFAULT_LOCATION, ['.xls', '.xlsx'], process)
     .then(function (summary) {
         logger.log('info', 'migrate: done!');
         process.send(summary, function () {
