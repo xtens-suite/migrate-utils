@@ -31,7 +31,7 @@
     "csv-parse": "^1.0.0",
     "excel": "^0.1.4",
     "knex": "^0.14.x",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.19",
     "moment-timezone": "^0.4.1",
     "mysql": "^2.7.0",
     "node-xlsx": "^0.6.0",
