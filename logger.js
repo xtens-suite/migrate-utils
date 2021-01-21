@@ -1,33 +1,52 @@
 /* jshint esnext: true */
 /* jshint node: true */
 "use strict";
-let winston = require('winston');
-winston.emitErrs = true;
+// var fs = require('fs');
+// var util = require('util');
+var winston = require('winston');
+// let logger = {};
+// var log_file = fs.createWriteStream(__dirname + '/logs/debug.log', {flags : 'a'});
+// var log_stdout = process.stdout;
 
-let logger = new winston.Logger({
-    transports: [
-        new winston.transports.File({
-            level: 'info',
-            filename: './logs/all-logs.log',
-            handleExceptions: true,
-            json: true,
-            maxsize: 5242880, //5MB
-            maxFiles: 5,
-            colorize: false
-        }),
-        new winston.transports.Console({
-            level: 'debug',
-            handleExceptions: true,
-            json: false,
-            colorize: true
-        })
-    ],
-    exitOnError: false
-});
+// logger.log = function(d,f) {
+//   const  dt = new Date().toUTCString();
+//   log_file.write(dt + " " + util.format(d.toString() + " - " + f.toString()) + '\n');
+//   log_stdout.write(dt + " " + util.format(d.toString() + " - " + f.toString()) + '\n');
+// };
 
-module.exports = logger;
-module.exports.stream = {
-    write: function(message, encoding){
-        logger.info(message);
+// singleton
+  var logger,
+
+  createLogger = function createLogger(options) {
+    if (logger) {
+      return logger;
     }
-};
+
+    logger = winston.createLogger({
+      level: 'info',
+      format: winston.format.json(),
+    //   defaultMeta: { service: 'user-service' },
+      transports: [
+        //
+        // - Write all logs with level `error` and below to `error.log`
+        // - Write all logs with level `info` and below to `combined.log`
+        //
+        new winston.transports.File({ filename: './logs/error.log', level: 'error' }),
+        new winston.transports.File({ filename: './logs/combined.log', level: 'info' }),
+      ],
+    });
+    
+    //
+    // If we're not in production then log to the `console` with the format:
+    // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
+    //
+    if (process.env.NODE_ENV !== 'production') {
+      logger.add(new winston.transports.Console({
+        format: winston.format.simple(),
+      }));
+    }
+    return logger;
+  };
+
+module.exports = createLogger;
+

@@ -1,6 +1,10 @@
 module.exports = {
+    
+    basePath: 'https://localhost',
+    
+    bearerToken: "",
 
-    bearerToken: '',
+    NGSFilesBasePath: '/mnt/datasets/xtens',
 
     mysqlLocal: {
         client: 'mysql',
@@ -19,7 +23,7 @@ module.exports = {
             port: 5432,
             user: 'xtenspg',
             password: 'xtenspg',
-            database: 'xtensigg'
+            database: 'xtensdb'
         }
     },
 
@@ -30,7 +34,7 @@ module.exports = {
             port: 5432,
             user: 'xtenspg',
             password: 'xtenspg',
-            database: 'xtens_genomic_annotation'
+            database: 'xtensdb_genomic_annotation'
         }
     }
 

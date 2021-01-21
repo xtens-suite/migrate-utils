@@ -1,24 +1,25 @@
 #! /usr/bin/env node
 
-var logger = require('./logger.js');
+var loggerGen = require('./logger.js');
+const logger = loggerGen();
 var Migrator = require("./lib/Migrator.js");
 logger.log('info', "Creating new migrator");
 var migrator = new Migrator();
-var DEFAULT_LOCATION = '../xtens-app/assets/dataFiles/tmp';
+var DEFAULT_LOCATION = '/mnt/xtens-filesystem/landing';
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NGSPrefixDebugPath = '';
 
-migrator.createNGSANALYSIS(DEFAULT_LOCATION, '.tsv', process)
+return migrator.createNGSANALYSIS(DEFAULT_LOCATION, '.tsv', process)
     .then(function (summary) {
-        logger.log('info', 'migrate: done!');
-        process.send(summary, function () {
-            if (summary.error) {
-                process.exit(1);
-            }
-            process.exit(0);
-        });
-
+        logger.info('migrate: done!');
+        // process.send(summary, function () {
+        //     if (summary.error) {
+        //     }
+        // });
+        return;
     })
     .catch(function (err) {
         logger.log('error', err);
-        process.exit(1);
+        logger.error(err);
+        return;
     });
