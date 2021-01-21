@@ -24,8 +24,10 @@ var winston = require('winston');
 
     logger = winston.createLogger({
       level: 'info',
-      format: winston.format.json(),
-    //   defaultMeta: { service: 'user-service' },
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.prettyPrint()
+      ),     //   defaultMeta: { service: 'user-service' },
       transports: [
         //
         // - Write all logs with level `error` and below to `error.log`

@@ -19,7 +19,7 @@ return migrator.createNGSANALYSIS(DEFAULT_LOCATION, '.tsv', process)
         return;
     })
     .catch(function (err) {
-        logger.log('error', err);
-        logger.error(err);
+        logger.log('error', err.message);
+        // logger.error(err);
         return;
     });
