@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-var loggerGen = require('./../logger.js');
+var loggerGen = require('./logger.js');
 const logger = loggerGen();
 var Migrator = require("./lib/Migrator.js");
 logger.log('info', "Creating new migrator");
