@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+
 var loggerGen = require('./logger.js');
 const logger = loggerGen();
 var Migrator = require("./lib/Migrator.js");
@@ -17,7 +18,6 @@ migrator.migrateNGSPATIENTS(DEFAULT_LOCATION, '.xlsm', process)
             }
             process.exit(0);
         });
-
     })
     .catch(function (err) {
         logger.log('error', err);
