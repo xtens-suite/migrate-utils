@@ -28,7 +28,7 @@
     "bionode-vcf": "^1.1.5",
     "bluebird": "^2.9.30",
     "co": "^4.6.0",
-    "csv-parse": "^1.0.0",
+    "csv-parse": "^4.6.5",
     "excel": "^0.1.4",
     "knex": "^0.14.x",
     "lodash": "^3.10.1",
